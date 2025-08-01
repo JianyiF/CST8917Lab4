@@ -13,6 +13,8 @@ We create azure function to analyze and monitor taxi events ingest by azure even
 it use HTTO Trigger called by logic app using POST requestion with trip events.
 it contains vendorID, tripDistance, passengerCount, paymentType.
 it also analyze the conditions isInteresting: true with insight tags (if flagged), and isInteresting: false (if no issues found)
+<img width="1906" height="906" alt="image" src="https://github.com/user-attachments/assets/baa7033d-a5e2-4c89-a029-607818ccd0e1" />
+
 ```python
 import azure.functions as func
 import logging
@@ -129,6 +131,8 @@ indicate **Trip Analyzed - No Issues**
 
 ## Azure Logic App
 Azure logic app will process the taxi event ingest through azure function analysis, and send adpative cards to teams base on coditions.
+<img width="1903" height="909" alt="image" src="https://github.com/user-attachments/assets/6ca6195e-8fc6-40b9-999d-d167835ef259" />
+
 <img width="1896" height="909" alt="image" src="https://github.com/user-attachments/assets/96a08a4e-b81a-498c-83a3-dcd4d1f7a3f5" />
 It sends **Trip Aanalyzed - No Issues** when the condition of is intesting is false by sending json file of
 
@@ -160,6 +164,8 @@ It sends **Trip Aanalyzed - No Issues** when the condition of is intesting is fa
 ```
 
 <img width="1898" height="878" alt="image" src="https://github.com/user-attachments/assets/4ee4e53f-cd0d-4eb5-b474-60985f6cbe2a" />
+<img width="456" height="201" alt="image" src="https://github.com/user-attachments/assets/0e47e3a2-4e90-41fe-ab8a-beb3df9bc926" />
+
 
 It sends **Ineresting Trip Detected** when the condition of is intesting is true and contain suspiciousvenderactivity is false by sending json file of
 
@@ -191,6 +197,8 @@ It sends **Ineresting Trip Detected** when the condition of is intesting is true
 
 ```
 <img width="1902" height="907" alt="image" src="https://github.com/user-attachments/assets/34000753-255e-4118-936f-88a02394cb45" />
+<img width="457" height="198" alt="image" src="https://github.com/user-attachments/assets/952b460e-b080-4334-bf7c-9b9ca085d0dc" />
+
 It sends **Supicious Vendor Activity Detected** when the condition of is intesting is true and contain supicousvendoractvitiy is true by sending json file of
 
 ```json
@@ -221,6 +229,7 @@ It sends **Supicious Vendor Activity Detected** when the condition of is intesti
 ```
 
 <img width="1885" height="910" alt="image" src="https://github.com/user-attachments/assets/454af13e-3955-4073-83f2-3ca47d519872" />
+<img width="458" height="197" alt="image" src="https://github.com/user-attachments/assets/e88987a1-377a-4a38-b95d-ad83c2a794e3" />
 
 ## Improvements
 - Use Durable Functiosn for stateful orchestraction
