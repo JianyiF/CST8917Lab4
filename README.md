@@ -4,9 +4,9 @@
 This lab implements a **Real-Time Trip Monitoring for Taxi Dispatch System** using Azure services. It ingests trip data from an Event Hub, processes it with an Azure Function, and routes alerts to Microsoft Teams via Logic Apps and Adaptive Cards. The system identifies whether the trip is interesting or not, or suspicious trip patterns to help operations teams take action immediately.
 
 ## Project Architecture
-- Azure Event Hub for ingest taxi events
+- Azure Event Hub for ingesting taxi events
 - Azure function for analyzing and monitor taxi events
-- Azure logic apps for post adaptive card to teams
+- Azure logic apps for posting adaptive card to teams
 
 ## Azure Function
 We create azure function to analyze and monitor taxi events ingest by azure event hub.
